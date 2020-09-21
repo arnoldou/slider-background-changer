@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambiar Background con slider.</title>
+    <style>
+* {
+  margin: 0;
+}
+body {
+  font-family: arial;
+  background-color: rgb(128, 128, 128);
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;    
+}
+
+.texto {
+    height: 60px;
+    background-color: grey;
+    text-align: center;
+    color: #fff;
+}
+
+h3 {
+    margin: 10px 20px;
+}
+
+.slider {
+    margin: 15px 10px; 
+}
+
+button {
+  font-size: large;
+  margin: 10px;
+  padding: 10px 19px;
+}
+
+    </style>
+</head>
+<body>
+<div class="sliders">    
+    <div>
+        <label for="">Rojo:</label>
+        <input type="range" min="0" max="256" value="128" class="slider" id="slider_rojo" onchange="cambiarColor();">
+    </div>
+    <div>
+        <label for="">Verde:</label>
+        <input type="range" min="0" max="256" value="128" class="slider" id="slider_verde" onchange="cambiarColor();">
+    </div>
+    <div>
+        <label for="">Azul:</label>
+        <input type="range" min="0" max="256" value="128" class="slider" id="slider_azul" onchange="cambiarColor();">
+    </div>
+</div>
+<div class="texto">
+    <h3>Mover los sliders para cambiar el color al background.</h3>  
+</div>
+
+<script>
+function cambiarColor(){
+
+/*
+Escribir una funcion que cambie aleatoriamente el color del background de la pagina.  
+*/
+
+slider_rojo = document.querySelector('#slider_rojo')
+slider_verde = document.querySelector('#slider_verde')
+slider_azul = document.querySelector('#slider_azul')
+console.log(slider_rojo.value, slider_verde.value, slider_azul.value);
+
+document.querySelector('body').style.backgroundColor = `rgb(${slider_rojo.value},${slider_verde.value},${slider_azul.value}`;
+
+}
+</script>
+</body>
+</html>
